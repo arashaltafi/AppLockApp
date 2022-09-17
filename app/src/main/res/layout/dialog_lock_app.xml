@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:clipToPadding="false">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llTitle"
+        android:layout_width="0dp"
+        android:layout_height="?actionBarSize"
+        android:background="?android:attr/colorBackground"
+        android:elevation="8dp"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnCancel"
+            android:layout_width="?actionBarSize"
+            android:layout_height="match_parent"
+            android:background="?selectableItemBackground"
+            app:srcCompat="@drawable/ic_back" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvTitle"
+            style="@style/txt.h3.medium"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="?actionBarSize"
+            android:gravity="center"
+            android:lines="1" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/llIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layoutDirection="ltr"
+        android:orientation="horizontal"
+        android:paddingHorizontal="52dp"
+        app:layout_constraintBottom_toTopOf="@+id/llNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llTitle"
+        app:layout_constraintVertical_bias="0.7">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivCodeOne"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="?colorPrimary"
+            android:elevation="1dp"
+            app:contentPadding="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/ivCodeTwo"
+            app:shapeAppearance="@style/appearance.round.25" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivCodeTwo"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="?colorPrimary"
+            android:elevation="1dp"
+            app:contentPadding="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@+id/ivCodeOne"
+            app:layout_constraintRight_toLeftOf="@+id/ivCodeThree"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/appearance.round.25" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivCodeThree"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="?colorPrimary"
+            android:elevation="1dp"
+            app:contentPadding="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@+id/ivCodeTwo"
+            app:layout_constraintRight_toLeftOf="@+id/ivCodeFour"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/appearance.round.25" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivCodeFour"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="?colorPrimary"
+            android:elevation="1dp"
+            app:contentPadding="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@+id/ivCodeThree"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/appearance.round.25" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <GridLayout
+        android:id="@+id/llNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="46dp"
+        android:layout_marginBottom="16dp"
+        android:alignmentMode="alignBounds"
+        android:clipToPadding="false"
+        android:columnCount="3"
+        android:layoutDirection="ltr"
+        android:paddingVertical="8dp"
+        android:rowCount="4"
+        android:useDefaultMargins="true"
+        app:layout_constraintBottom_toTopOf="@+id/btnForgetPass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnOne"
+            style="@style/btn.circle"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTwo"
+            style="@style/btn.circle"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="2" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnThree"
+            style="@style/btn.circle"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="3" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFour"
+            style="@style/btn.circle"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="4" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFive"
+            style="@style/btn.circle"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="5" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSix"
+            style="@style/btn.circle"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="6" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSeven"
+            style="@style/btn.circle"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="7" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEight"
+            style="@style/btn.circle"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="8" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNine"
+            style="@style/btn.circle"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="9" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnFinger"
+            style="@style/fab.keyboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="finger print"
+            android:src="@drawable/ic_finger_print" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnZero"
+            style="@style/btn.circle"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="0" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnDelete"
+            style="@style/fab.keyboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="delete last character"
+            android:src="@drawable/ic_keyboard_delete" />
+
+    </GridLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnForgetPass"
+        style="@style/btn.text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="16dp"
+        android:text="@string/i_forgot_ny_password"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

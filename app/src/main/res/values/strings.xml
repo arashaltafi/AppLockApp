@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">AppLockApp</string>
+
+    <string name="i_forgot_ny_password">رمز عبور خود را فراموش کرده ام!</string>
+    <string name="least_4_number">حداقل 4 عدد</string>
+    <string name="please_enter_the_password">لطفا رمز عبور را وارد کنید.</string>
+    <string name="please_enter_your_password">لطفا رمز 4 رقمی خود را وارد کنید.</string>
+    <string name="please_enter_your_password_again">لطفا رمز خود را دوباره وارد کنید.</string>
+    <string name="enable_fingerprint">برای استفاده از این قابلیت ابتدا حسگر اثر انگشت را فعال کنید.</string>
+    <string name="authenticate">احراز هویت</string>
+    <string name="cancel_btn">لغو</string>
+    <string name="invalid_pass_match">عدم تطابق رمزعبور</string>
+    <string name="invalid_password">رمز عبور نامعتبر</string>
+    <string name="app_lock">قفل برنامه</string>
+
+</resources>
