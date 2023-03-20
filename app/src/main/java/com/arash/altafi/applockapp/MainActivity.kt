@@ -20,65 +20,56 @@ class MainActivity : AppCompatActivity() {
         init()
     }
 
-    private fun init() {
-        binding.apply {
-            smAppLock.apply {
-                isChecked = sharedPreferencesPass.getLock()
+    private fun init() = binding.smAppLock.apply {
+        isChecked = sharedPreferencesPass.getLock()
+        setOnCheckedChangeListener { view, isChecked ->
+            if (view.isPressed.not())
+                return@setOnCheckedChangeListener
 
-                setOnCheckedChangeListener { view, isChecked ->
-
-                    if (view.isPressed.not())
-                        return@setOnCheckedChangeListener
-
-                    if (isChecked) {
-                        LockAppDialog(
-                            mContext = this@MainActivity,
-                            isSetting = true
-                        ).apply {
-                            onBackPress = {
-                                setChecked(false)
-                                dismiss()
-                            }
-                            onSetCode =
-                                {
-                                    if (it.isNotEmpty()) {
-                                        sharedPreferencesPass.savePass(it, true)
-                                    }
-                                    dismiss()
-                                }
-                        }.show()
-                    } else {
-                        LockAppDialog(
-                            mContext = this@MainActivity,
-                            cancelable = true,
-                            correctPassword = sharedPreferencesPass.getPass(),
-                            isSetting = false
-                        ).apply {
-                            onBackPress = {
-                                setChecked(true)
-                                dismiss()
-                            }
-                            onEnterCode = {
-                                if (it) {
-                                    dismiss()
-                                    sharedPreferencesPass.clear()
-                                    setChecked(false)
-                                } else {
-                                    dismiss()
-                                    setChecked(true)
-                                }
-                            }
-                            onForgetPass = {
-                                //do logout
-                                toast("please reinstall application")
-                            }
-                        }.show()
+            if (isChecked) {
+                LockAppDialog(
+                    mContext = this@MainActivity,
+                    isSetting = true
+                ).apply {
+                    onBackPress = {
+                        setChecked(false)
+                        dismiss()
                     }
-                }
-
+                    onSetCode = {
+                        if (it.isNotEmpty()) {
+                            sharedPreferencesPass.savePass(it, true)
+                        }
+                        dismiss()
+                    }
+                }.show()
+            } else {
+                LockAppDialog(
+                    mContext = this@MainActivity,
+                    cancelable = true,
+                    correctPassword = sharedPreferencesPass.getPass(),
+                    isSetting = false
+                ).apply {
+                    onBackPress = {
+                        setChecked(true)
+                        dismiss()
+                    }
+                    onEnterCode = {
+                        if (it) {
+                            dismiss()
+                            sharedPreferencesPass.clear()
+                            setChecked(false)
+                        } else {
+                            dismiss()
+                            setChecked(true)
+                        }
+                    }
+                    onForgetPass = {
+                        //do logout
+                        toast("please reinstall application")
+                    }
+                }.show()
             }
         }
-
     }
 
 }
